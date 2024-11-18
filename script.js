@@ -159,3 +159,54 @@ agesArr3.pop() // ref. 7890
 
 console.log("copia", agesArr3) // ref. 7890
 console.log("original", agesArr1) // ref. 1234
+
+
+
+// CLASES
+
+// PascalCasing para nombrar clases
+class Hero {
+
+  constructor(nombre, identidad) {
+    // aqui definimos todas las propiedades que tendrán nuestros heroes
+    this.name = nombre;
+    this.identity = identidad;
+    this.isEvil = false; // propiedad estatica (siempre empieza igual)
+  }
+
+  // aqui definimos todos los metodos que tendrán nuestros heroes
+  revelarIdentidadSecreta() {
+    return `Soy ${this.name}, y mi identidad secreta es: ${this.identity}`
+  }
+
+  convertirseEnVillano() {
+    this.isEvil = true;
+    return `Yo, ${this.name} ahora soy malvado, MUAHAHAHAHA!`
+  }
+
+  atacar(target) {
+    return `${this.name} le ha estampado una ostia a ${target}`
+  }
+
+}
+
+
+
+// fabricar un nuevo objeto basado en la clase (la plantilla)
+const unNuevoHeroe = new Hero("Iron Man", "Tony Stark")
+console.log(unNuevoHeroe) // ref 1
+console.log(unNuevoHeroe.name)
+
+console.log( unNuevoHeroe.revelarIdentidadSecreta() )
+
+const otroHeroe = new Hero("Batman", "Bruce Wayne")
+console.log(otroHeroe) // ref 2
+// otroHeroe.name = "PATATAMAN"
+// console.log(otroHeroe)
+
+console.log( otroHeroe.revelarIdentidadSecreta() )
+
+console.log( unNuevoHeroe.convertirseEnVillano() )
+console.log(unNuevoHeroe)
+
+console.log( unNuevoHeroe.atacar(otroHeroe.name) )
