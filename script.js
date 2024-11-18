@@ -210,3 +210,37 @@ console.log( unNuevoHeroe.convertirseEnVillano() )
 console.log(unNuevoHeroe)
 
 console.log( unNuevoHeroe.atacar(otroHeroe.name) )
+
+
+// class Subclase extends Clase {}
+class SuperHero extends Hero {
+
+  constructor(name, identity, superPower) {
+    super(name, identity) // obligatorio en subclases. Sirve para pasar los argumentos que requiere la clase padre para crear la estructura general
+
+    this.superPower = superPower;
+    // puedo agregar tantas propiedades unicas de superheroes como quisiera
+  }
+
+  // metodos unicos de superheroes
+  useSuperPower() {
+    return `${this.name} usa el poder de ${this.superPower}`
+  }
+
+}
+
+let nuevoSuperHeroe = new SuperHero("Superman", "Clark Kent", "Vision laser")
+console.log(nuevoSuperHeroe)
+
+console.log(nuevoSuperHeroe.useSuperPower())
+
+console.log(nuevoSuperHeroe.atacar(otroHeroe.name))
+
+let heroe3 = new Hero("Black Widow", "Natasha Romanoff")
+console.log(heroe3)
+
+let superHero2 = new SuperHero("Spiderman", "Peter Parker", "Lanzar Telarañas")
+
+console.log( heroe3.atacar(superHero2.name) )
+console.log( superHero2.useSuperPower() )
+
